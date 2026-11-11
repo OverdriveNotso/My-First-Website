@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nick Bos – Junior Software Engineer</title>
+  <meta name="description" content="Portfolio of Nick Bos, junior software engineer.">
+  <meta property="og:title" content="Nick Bos – Junior Software Engineer">
+  <meta property="og:description" content="Portfolio of Nick Bos, junior software engineer.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111418'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='30' fill='%237ee0b0'%3ENB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="sidebar">
+      <h1>Nick Bos</h1>
+      <p class="title">Junior software engineer</p>
+      <p class="pitch">Lorem ipsum dolor sit amet, ik bouw schaalbare, cloud-native microservices met een pragmatische blik op DX.</p>
+      <nav aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+      </nav>
+      <ul class="social">
+        <li><a href="https://github.com/OverdriveNotso" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nick-bos-610885375" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">LinkedIn</a></li>
+        <li><a href="mailto:nickbos1990@gmail.com" aria-label="Send me an email">Email</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Quantum Synergy Dashboard</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Een event-driven, headless platform dat realtime KPI's orkestreert en stakeholder-alignment disruptief optimaliseert via een gecontaineriseerde data-pipeline.</p>
+            <ul class="tags"><li>TypeScript</li><li>React</li><li>GraphQL</li></ul>
+            <!-- Add real links, e.g.:
+            <p class="links"><a href="https://..." target="_blank" rel="noopener">Live demo</a> <a href="https://github.com/OverdriveNotso/..." target="_blank" rel="noopener">Code</a></p>
+            -->
+          </article>
+
+          <article class="card">
+            <h3>Blockchain Cloud Nexus</h3>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Een serverless, AI-gedreven middleware-laag die legacy-monolieten naar een schaalbare mesh van lichtgewicht endpoints refactort.</p>
+            <ul class="tags"><li>Node.js</li><li>Docker</li><li>PostgreSQL</li></ul>
+            <!-- <p class="links"><a href="https://..." target="_blank" rel="noopener">Live demo</a> <a href="https://..." target="_blank" rel="noopener">Code</a></p> -->
+          </article>
+
+          <article class="card">
+            <h3>Agile Paradigm Engine</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Een full-stack, mobile-first toolkit voor het leveragen van synergetische workflows met zero-downtime deployments en end-to-end observability.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Redis</li></ul>
+            <!-- <p class="links"><a href="https://..." target="_blank" rel="noopener">Live demo</a> <a href="https://..." target="_blank" rel="noopener">Code</a></p> -->
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>JavaScript</li><li>React</li><li>PostgreSQL</li><li>Git</li><li>CI/CD</li><li>Kubernetes</li>
+        </ul>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit: ik ben een gedreven developer met een passie voor clean code, agile werken en het bouwen van robuuste, toekomstbestendige oplossingen. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+        <p>Op dit moment verdiep ik me in cloud-architectuur, event sourcing en domain-driven design. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="links">
+          <a href="mailto:nickbos1990@gmail.com">nickbos1990@gmail.com</a>
+          <!-- <a href="cv.pdf" download>Download CV</a> -->
+        </p>
+      </section>
+
+      <footer class="site-footer">
+        <p>© 2026 Nick Bos</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Make the background glow follow the cursor (skipped for reduced motion).
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let raf = 0;
+      addEventListener('pointermove', e => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+          document.documentElement.style.setProperty('--my', e.clientY + 'px');
+          raf = 0;
+        });
+      });
+    }
+
+    // Highlight the nav link of the section currently in view.
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('main section');
+    function setActive(id) {
+      links.forEach(link => {
+        const active = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => observer.observe(s));
+
+    // The last section can't scroll up to the middle of the screen,
+    // so activate it when the page is scrolled all the way down.
+    addEventListener('scroll', () => {
+      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) {
+        setActive(sections[sections.length - 1].id);
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
